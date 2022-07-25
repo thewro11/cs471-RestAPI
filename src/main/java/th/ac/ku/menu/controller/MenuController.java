@@ -25,6 +25,11 @@ public class MenuController {
         return service.create(menu);
     }
 
+    @PostMapping("/as_list")
+    public List<Menu> create(@RequestBody List<Menu> menuList) {
+        return service.create(menuList);
+    }
+
     @GetMapping("/{id}")
     public Menu getMenuById(@PathVariable UUID id) {
         return service.getMenuById(id);

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import th.ac.ku.menu.model.Menu;
 import th.ac.ku.menu.repository.MenuRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -52,4 +53,8 @@ public class MenuService {
         return menuRepository.findByCategory(category);
     }
 
+    public List<Menu> create(List<Menu> menuList) {
+        menuRepository.saveAll(menuList);
+        return new ArrayList<>(menuList);
+    }
 }
